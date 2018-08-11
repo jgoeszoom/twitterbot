@@ -2,6 +2,7 @@
 
 import tweepy
 import json
+import process
 
 jsonPath = "./tokens.json"      #Location of json file with tokens/keys
 
@@ -12,24 +13,26 @@ def readtoken(type_name, attribute_name):
     :param attribute_name: Key or secret value
     :return: string to corresponding type and attribute (e.e., consumer_key)
     """
-    with open(jsonPath, 'r') as jsonFile:
-        tokenData = json.load(jsonFile)
-    return tokenData[type_name][attribute_name]
+    #with open(jsonPath, 'r') as jsonFile:
+    #    tokenData = json.load(jsonFile)
+    #return tokenData[type_name][attribute_name]
 
 def main():
     # Reads the keys and secrets from json file
-    consumer_key = readtoken("consumer", "key")
-    consumer_secret = readtoken("consumer", "secret")
-    access_token = readtoken("access", "key")
-    access_token_secret = readtoken("access", "secret")
+    #consumer_key = readtoken("consumer", "key")
+    #consumer_secret = readtoken("consumer", "secret")
+    #access_token = readtoken("access", "key")
+    #access_token_secret = readtoken("access", "secret")
 
     # Constructs OAuthentication
-    auth = tweepy.auth.OAuthHandler(consumer_key, consumer_secret, callback=None)
-    auth.set_access_token(access_token, access_token_secret)
+    #auth = tweepy.auth.OAuthHandler(consumer_key, consumer_secret, callback=None)
+    #auth.set_access_token(access_token, access_token_secret)
 
-    api = tweepy.API(auth)
+    process.process.convert()
 
-    print(api.get_user(167457765))
+    #api = tweepy.API(auth)
+
+    #print(api.get_user(167457765))
 
 if __name__ == '__main__':
     try:
