@@ -28,7 +28,7 @@ def main():
     #auth = tweepy.auth.OAuthHandler(consumer_key, consumer_secret, callback=None)
     #auth.set_access_token(access_token, access_token_secret)
 
-    process.process.convert()
+    img = process.process.read()
 
     #api = tweepy.API(auth)
 
